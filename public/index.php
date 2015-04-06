@@ -3,7 +3,7 @@
 require_once '../config.php';
 
 // include the Composer autoloader
-require '../vendor/autoload.php';
+require_once __ROOT__ . '/vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

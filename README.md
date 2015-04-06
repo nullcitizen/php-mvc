@@ -2,7 +2,7 @@
 
 Example PHP MVC using PSR-4 autoloading and composer.
 
-*NOT FOR PRODUCTION*
+**NOT FOR PRODUCTION**
 
 
 

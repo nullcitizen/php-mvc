@@ -2,6 +2,7 @@
 
 // Constants for global settings that will not be changed.
 // Conditionally checking for env variables before loading in defaults
+define('__ROOT__', dirname(__FILE__)); 
 
 define('DB_HOST',   (isset($_ENV['DB_HOST'])) ? $_ENV['DB_HOST'] : 'localhost');
 define('DB_NAME',   (isset($_ENV['DB_NAME'])) ? $_ENV['DB_NAME'] : 'homepage');
