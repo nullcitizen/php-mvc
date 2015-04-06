@@ -3,14 +3,16 @@ namespace Cochran\Page;
 
 use Cochran\Page;
 
-class PageController {
-    public function __construct() {
+class PageController
+{
+    public function __construct()
+    {
         $this->page = new Page();
         $this->templates = new \League\Plates\Engine('../resources/views');
     }
 
-    public function view($slug = 'home') {
-
+    public function view($slug = 'home')
+    {
         $page = $this->page->get($slug);
         if($page) {
             echo $this->templates->render($slug, ['data' => $page]);
