@@ -1,0 +1,9 @@
+{
+    "require": {
+        "league/route": "~1.1",
+        "league/plates": "~3.1"
+    },
+    "autoload": {
+        "psr-4": {"Cochran\\": "src/"}
+    }
+}
