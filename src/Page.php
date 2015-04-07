@@ -36,4 +36,14 @@ class Page
 
         return $page;
     }
+
+    public function create(array $data)
+    {
+        $sql = $this->db->prepare("INSERT INTO PAGES (title, slug, description, content) VALUES (:title, :slug, :description, :content)");
+        $sql->bindParam(':title', $data['title']);
+        $sql->bindParam(':slug', $data['slug']);
+        $sql->bindParam(':description', $data['description']);
+        $sql->bindParam(':content', $data['content']);
+        $sql->execute();
+    }
 }

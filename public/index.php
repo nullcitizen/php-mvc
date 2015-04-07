@@ -14,15 +14,41 @@ $router = new League\Route\RouteCollection;
 
 $router->addRoute('GET', '/', function (Request $request, Response $response) {
     $controller = new Cochran\Page\PageController(); 
-    $controller->view('home');
+    $controller->show('home');
     return $response;
 });
 
-$router->addRoute('GET', '/{slug}', function (Request $request, Response $response, array $args) {
+// * GET/page/ --> PageController::index
+$router->addRoute('GET', '/page', function (Request $request, Response $response) {
     $controller = new Cochran\Page\PageController(); 
-    $controller->view($args['slug']);
+    $controller->index();
     return $response;
 });
+// * GET/page/create --> PageController::create
+$router->addRoute('GET', '/page/create', function (Request $request, Response $response) {
+    $controller = new Cochran\Page\PageController(); 
+    $controller->create();
+    return $response;
+});
+// * POST/page/ --> PageController::store
+$router->addRoute('POST', '/page', function (Request $request, Response $response) {
+    $controller = new Cochran\Page\PageController(); 
+    $controller->store();
+    return $response;
+});
+// * GET/page/{id} --> PageController::show
+
+// * GET/page/{id}/edit --> PageController::edit
+
+// * POST/page/id + REQUEST_METHOD = put --> PageController::update
+// * POST/page/id + REQUEST_METHOD = put --> PageController::destroy
+
+$router->addRoute('GET', '/{slug}', function (Request $request, Response $response, array $args) {
+    $controller = new Cochran\Page\PageController(); 
+    $controller->show($args['slug']);
+    return $response;
+});
+
 
 $dispatcher = $router->getDispatcher();
 $request = Request::createFromGlobals();
