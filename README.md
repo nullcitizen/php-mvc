@@ -1,4 +1,6 @@
 # PHP MVC Example
+[![Build
+Status](https://travis-ci.org/joecochran/php-mvc.svg?branch=master)](https://travis-ci.org/joecochran/php-mvc)
 
 Example PHP MVC using PSR-4 autoloading and composer.
 
