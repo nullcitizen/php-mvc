@@ -35,12 +35,8 @@ class PageController
             $page['content'] = $this->converter->convertToHtml($page['content']);
             echo $this->templates->render($slug, ['data' => $page]);
         } else {
-            $data = array(
-                'title' => '404 Page Not Found',
-                'slug' => '404',
-                'description' => '404 Page Not Found'
-            );
-            echo $this->templates->render('404', ['data' => $data]);
+            //http_response_code(404);
+            echo $this->templates->render('404');
         }    
     }
 
